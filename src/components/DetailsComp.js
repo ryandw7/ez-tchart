@@ -1,10 +1,18 @@
 
-export default function DetailsComp({ details }) {
-    const { internet, mobile, entertainment } = details;
+import { formatNum } from "../utils";
+export default function DetailsComp({ bundle, edit }) {
+
+    const { internet, mobile, entertainment } = bundle;
+    
+    const handleEdit = () => {
+
+        edit('currentPackage')
+    }
     return (
         <div className="details">
+            <div onClick={handleEdit}>EDIT</div>
             <section className="detail-section">
-                <h3>Internet: {internet.value}</h3>
+                <h3>Internet:${formatNum(internet.cost)}</h3>
                 {internet.notes &&
                     <div>
                         <h4>Notes:</h4>
@@ -13,7 +21,7 @@ export default function DetailsComp({ details }) {
             </section>
             {entertainment.value > 0 &&
                 <section className="detail-section">
-                    <h3>Entertainment: {entertainment.value}</h3>
+                    <h3>Entertainment: ${formatNum(entertainment.cost)}</h3>
                     {entertainment.notes &&
                         <div>
                             <h4>Notes:</h4>
@@ -23,11 +31,11 @@ export default function DetailsComp({ details }) {
             }
 
             <section className="detail-section">
-                <h3>mobile: {mobile.value}</h3>
+                <h3>mobile: ${formatNum(mobile.cost)}</h3>
                 {mobile.notes &&
                     <div>
                         <h4>Notes:</h4>
-                        <p>{mobile.notes}</p>
+                        <p>${mobile.notes}</p>
                     </div>}
             </section>
         </div>
