@@ -1,34 +1,89 @@
+html {
+  box-sizing: border-box;
+}
 .App {
-  margin: 0 auto;
+  margin: 10px auto;
   text-align: center;
+  justify-content: center;
+  justify-items: center;
+  width: 800px;
+ box-sizing: border-box;
 }
 
 .current-package {
-margin: 0 auto;
-border: 3px solid black;
-width: 80%;
-
-display: flex;
-flex-direction: row;
-flex-wrap: nowrap;
+  
+  margin: 0 auto;
+  width: 800px;
+  flex-wrap: nowrap;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
 }
 
-.current-package .form {
-  margin: 10 auto;
-  border: 3px solid blue;
-  width: 80%;
+.current-package h2 {
+  box-sizing: border-box;
+  margin: 0 auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  width: 800px;
+  color: white;
+  background-color: blueviolet;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-right: 2px solid black;
+  border-left: 2px solid black;
+}
+
+.current-package .form, .current-package .details {
+  margin: 0 auto;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  border-bottom: 2px solid black;
+  max-width: 800px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
+
 .current-package .form .form-section {
-  border: 3px solid green;
-  width: 30%;
+  text-align: left;
+  margin: 0 auto;
+  padding: 0;
+  width: 25%;
   
 }
-.bundle-1 {
+.current-package .form .form-section h3 {
+text-align: center;
+margin: 0 auto;
+}
+.form .submit-button, .details .edit-button {
+  position: absolute;
+  left: 90%;
+}
+
+
+.bundle-1-single {
   margin: 0 auto;
-  width: 40%;
+  max-width: 800px;
   border: 3px solid black;
 }
+
+.package-2-button {
+  position: absolute;
+  bottom: 50%;
+}
+.bundle-double-left, .bundle-double-right {
+  border: 2px solid black;
+  width: 350px;
+  float: left;
+}
+
+.bundle-double-left {
+  margin-right: 49px
+}
+
+.bundle-double-right {
+  margin-left: 49px
+}
+
+

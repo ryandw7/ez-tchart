@@ -94,7 +94,7 @@ export default function FormComp({ edit, bundle, done }) {
                 <label htmlFor="entertainment-notes">Notes: </label>
                 <textarea onChange={changeInput} name="entertainment-notes" value={entertainment.notes}></textarea>
             </section>
-            <input type="submit" value="Submit" />
+            <input type="submit" value="Submit" className="submit-button"/>
         </form>
     )
 }
