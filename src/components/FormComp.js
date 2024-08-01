@@ -15,7 +15,7 @@ export default function FormComp({ edit, bundle, done }) {
                 if (dollarValueCheck(value) !== false) {
                     obj = {
                         ...obj,
-                        cost: dollarValueCheck(value) || 0
+                        cost: dollarValueCheck(value) 
                     }
                 }
             } else if (name === "internet-notes") {
@@ -32,7 +32,7 @@ export default function FormComp({ edit, bundle, done }) {
             if (name === "mobile-cost" && dollarValueCheck(value)) {
                 obj = {
                     ...obj,
-                    cost: parseFloat(value) || 0
+                    cost: dollarValueCheck(value)
                 }
 
             };
@@ -45,13 +45,13 @@ export default function FormComp({ edit, bundle, done }) {
             edit('mobile', obj)
 
         } else if (name === "entertainment-cost" || name === "entertainment-notes") {
-
+            console.log(name, value)
             let obj = { cost: entertainment.cost, notes: entertainment.notes };
 
             if (name === "entertainment-cost" && dollarValueCheck(value)) {
                 obj = {
                     ...obj,
-                    cost: parseFloat(value) || 0
+                    cost: dollarValueCheck(value)
                 }
 
             } else if (name === "entertainment-notes") {
@@ -69,30 +69,30 @@ export default function FormComp({ edit, bundle, done }) {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log('submit')
-        done('currentPackage')
+        done()
     }
     return (
         <form className="form" onSubmit={handleSubmit}>
-            <section>
+            <section className='form-section'>
                 <h3>Internet</h3>
                 <label htmlFor="internet-cost">Cost: </label>
-                <input name="internet-cost" type="text" inputMode="decimal" value={internet.cost} onChange={changeInput}></input>
+                <input name="internet-cost" type="number" value={internet.cost ? internet.cost : ''} onChange={changeInput}></input>
                 <label htmlFor="internet-notes">Notes: </label>
                 <textarea onChange={changeInput} name="internet-notes" value={internet.notes}></textarea>
             </section>
-            <section>
+            <section className='form-section'>
                 <h3>Mobile</h3>
                 <label htmlFor="mobile-cost">Cost: </label>
-                <input name="mobile-cost" type="number" value={mobile.cost} onChange={changeInput}></input>
+                <input name="mobile-cost" type="number" value={mobile.cost ? mobile.cost : ''} onChange={changeInput}></input>
                 <label htmlFor="mobile-notes">Notes: </label>
                 <textarea onChange={changeInput} name="mobile-notes" value={mobile.notes}></textarea>
             </section>
-            <section>
+            <section className='form-section'>
                 <h3>Entertainment</h3>
                 <label htmlFor="entertainment-cost">Cost: </label>
-                <input name="entertainment-cost" type="number" value={entertainment.cost} onChange={changeInput}></input>
+                <input name="entertainment-cost" type="number" value={entertainment.cost ? entertainment.cost : ''} onChange={changeInput}></input>
                 <label htmlFor="entertainment-notes">Notes: </label>
-                <textarea onChange={changeInput}></textarea>
+                <textarea onChange={changeInput} name="entertainment-notes" value={entertainment.notes}></textarea>
             </section>
             <input type="submit" value="Submit" />
         </form>

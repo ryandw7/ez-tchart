@@ -91,20 +91,32 @@ function App() {
   const editBundle2 = (key, valueObj) => {
     setValue('bundle2', key, valueObj)
   }
+  const addSecondPackage = () => {
+    setPackages((prev)=>{
+      return {
+        ...prev,
+        bundle2: {
+          ...prev.bundle2,
+          isAdded: true
+        }
+      }
+    })
+  }
   return (
     <div className="App">
+      <h2>Current Package</h2>
       <section className="current-package">
-        <h2>Current Package</h2>
-        {packages.currentPackage.isEdit ? <FormComp edit={editCurrentPackage} bundle={packages.currentPackage} done={doneEditing} /> : <DetailsComp edit={startEditing} bundle={packages.currentPackage} />}
+        
+        {packages.currentPackage.isEdit ? <FormComp edit={editCurrentPackage} bundle={packages.currentPackage} done={()=>doneEditing('currentPackage')} /> : <DetailsComp edit={startEditing} bundle={packages.currentPackage} />}
       </section>
       <section className="bundle-1">
-        <h2>Current Package</h2>
-        {packages.bundle1.isEdit ? <FormComp edit={editBundle1} bundle={packages.bundle1} /> : <DetailsComp bundle={packages.bundle1} />}
+        <h2>{packages.bundle2.isAdded ? 'Package 1' : 'New Package'}</h2>
+        {packages.bundle1.isEdit ? <FormComp edit={editBundle1} bundle={packages.bundle1} done={()=>doneEditing('bundle1')} /> : <DetailsComp bundle={packages.bundle1} />}
       </section>
-
+      <button onClick={addSecondPackage}>+</button>
       {packages.bundle2.isAdded && <section className="bundle-2">
         <h2>Current Package</h2>
-        {packages.bundle2.isEdit ? <FormComp edit={editBundle2} bundle={packages.bundle2} /> : <DetailsComp bundle={packages.bundle2} />}
+        {packages.bundle2.isEdit ? <FormComp edit={editBundle2} bundle={packages.bundle2} done={()=>doneEditing('bundle2')} /> : <DetailsComp bundle={packages.bundle2} />}
       </section>}
 
     </div>
