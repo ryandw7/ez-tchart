@@ -1,17 +1,18 @@
 html {
   box-sizing: border-box;
 }
+
 .App {
   margin: 10px auto;
   text-align: center;
   justify-content: center;
   justify-items: center;
   width: 800px;
- box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 .current-package {
-  
+
   margin: 0 auto;
   width: 800px;
   flex-wrap: nowrap;
@@ -33,7 +34,8 @@ html {
   border-left: 2px solid black;
 }
 
-.current-package .form, .current-package .details {
+.current-package .form,
+.current-package .details {
   margin: 0 auto;
   border-left: 2px solid black;
   border-right: 2px solid black;
@@ -50,13 +52,16 @@ html {
   margin: 0 auto;
   padding: 0;
   width: 25%;
-  
+
 }
+
 .current-package .form .form-section h3 {
-text-align: center;
-margin: 0 auto;
+  text-align: center;
+  margin: 0 auto;
 }
-.form .submit-button, .details .edit-button {
+
+.form .submit-button,
+.details .edit-button {
   position: absolute;
   left: 90%;
 }
@@ -64,26 +69,73 @@ margin: 0 auto;
 
 .bundle-1-single {
   margin: 0 auto;
-  max-width: 800px;
-  border: 3px solid black;
+  width: 800px;
 }
 
 .package-2-button {
   position: absolute;
   bottom: 50%;
 }
-.bundle-double-left, .bundle-double-right {
-  border: 2px solid black;
-  width: 350px;
-  float: left;
-}
 
-.bundle-double-left {
-  margin-right: 49px
-}
-
+.bundle-double-left,
 .bundle-double-right {
-  margin-left: 49px
+  box-sizing: border-box;
+  margin: 10px;
+  width: 350px;
+  height: fit-content;
+
 }
 
+.new-packages {
+  margin: 10px auto;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  height: fit-content;
+}
 
+.new-packages h2 {
+  width: 100%;
+  margin: 0 auto;
+  height: 50px;
+  background-color: blueviolet;
+  color: white;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+
+}
+
+.bundle-content {
+  padding: 10px 30px 10px 30px;
+  margin: 0 auto;
+  border-bottom: 2px solid black;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  text-align: left;
+  text-wrap: nowrap;
+}
+
+footer {
+  width: 800px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: nowrap;
+  text-align: center;
+}
+
+span {
+  position: relative;
+
+  justify-self: flex-end;
+  text-align: right;
+}
+
+@media print {
+
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+}

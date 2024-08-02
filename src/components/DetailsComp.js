@@ -1,7 +1,6 @@
 
-import { formatNum } from "../utils";
-import './Components.css'
-export default function DetailsComp({ bundle, edit }) {
+import '../styles/App.css'
+export default function DetailsComp({ bundle, edit, total }) {
 
     const { internet, mobile, entertainment } = bundle;
     
@@ -13,7 +12,7 @@ export default function DetailsComp({ bundle, edit }) {
         <div className="details">
             <button onClick={handleEdit} className="edit-button">EDIT</button>
             <section className="detail-section">
-                <h3>Internet: ${internet.cost.toFixed(2)}</h3>
+                <h3>Internet: <span>${internet.cost.toFixed(2)}</span></h3>
                 {internet.notes &&
                     <div>
                         <p>{internet.notes}</p>
@@ -21,7 +20,7 @@ export default function DetailsComp({ bundle, edit }) {
             </section>
             {entertainment.cost > 0 &&
                 <section className="detail-section">
-                    <h3>Entertainment: ${entertainment.cost.toFixed(2)}</h3>
+                    <h3>Entertainment: <span>${entertainment.cost.toFixed(2)}</span></h3>
                     {entertainment.notes &&
                         <div>
                             <p>{entertainment.notes}</p>
@@ -30,12 +29,13 @@ export default function DetailsComp({ bundle, edit }) {
             }
 
             <section className="detail-section">
-                <h3>mobile: ${mobile.cost.toFixed(2)}</h3>
+                <h3>mobile: <span>${mobile.cost.toFixed(2)}</span></h3>
                 {mobile.notes &&
                     <div>
                         <p>{mobile.notes}</p>
                     </div>}
             </section>
+            <h3>Total: ${total}</h3>
         </div>
     )
 }
