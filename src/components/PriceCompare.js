@@ -1,6 +1,7 @@
 
 
-
+import '../styles/App.css';
+import '../styles/print.css'
 export default function PriceCompare({prevTotal, newTotal}) {
 return (
 <div className="price-compare">

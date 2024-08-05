@@ -1,10 +1,9 @@
 import React from 'react';
 import { dollarValueCheck } from '../utils';
-import '../styles/App.css'
+import '../styles/App.css';
+import '../styles/print.css'
 export default function FormComp({ edit, bundle, done }) {
     const { internet, mobile, entertainment } = bundle;
-
-
 
     const changeInput = (e) => {
         let { name, value } = e.target;
@@ -74,31 +73,31 @@ export default function FormComp({ edit, bundle, done }) {
     }
     return (
         <form className="form" onSubmit={handleSubmit}>
-            <section className='form-section'>
+           <div className="form-section">
                 <h3>Internet</h3>
                 <label htmlFor="internet-cost">Cost: </label>
                 <input name="internet-cost" type="number" value={internet.cost ? internet.cost : ''} onChange={changeInput}></input>
                 <br></br>
                 <label htmlFor="internet-notes">Notes: </label>
                 <textarea onChange={changeInput} name="internet-notes" value={internet.notes}></textarea>
-            </section>
-            <section className='form-section'>
+                </div>
+                <div className="form-section">
                 <h3>Mobile</h3>
                 <label htmlFor="mobile-cost">Cost: </label>
                 <input name="mobile-cost" type="number" value={mobile.cost ? mobile.cost : ''} onChange={changeInput}></input>
                 <br></br>
                 <label htmlFor="mobile-notes">Notes: </label>
                 <textarea onChange={changeInput} name="mobile-notes" value={mobile.notes}></textarea>
-            </section>
-            <section className='form-section'>
+            </div>
+            <div className="form-section">
                 <h3>Entertainment</h3>
                 <label htmlFor="entertainment-cost">Cost: </label>
                 <input name="entertainment-cost" type="number" value={entertainment.cost ? entertainment.cost : ''} onChange={changeInput}></input>
                 <br></br>
                 <label htmlFor="entertainment-notes">Notes: </label>
                 <textarea onChange={changeInput} name="entertainment-notes" value={entertainment.notes}></textarea>
-            </section>
-            <input type="submit" value="Submit" className="submit-button"/>
+            </div>
+            <button type="submit" className="submit-button">Submit</button>
         </form>
     )
 }

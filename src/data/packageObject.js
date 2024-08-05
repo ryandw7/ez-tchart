@@ -36,6 +36,12 @@ const packages = {
       entertainment: {
         cost: 0, notes: ''
       }
+    },
+    additional: {
+      isEdit: true,
+      repName: '',
+      repContact: '',
+      additionalNotes: ''
     }
   };
 
