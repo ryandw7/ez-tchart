@@ -1,18 +1,19 @@
 
 import '../styles/App.css';
 import '../styles/print.css';
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare, faCheck } from '@fortawesome/free-solid-svg-icons';
 export default function DetailsComp({ bundle, edit, total }) {
 
     const { internet, mobile, entertainment } = bundle;
 
     const handleEdit = () => {
 
-        edit('currentPackage')
+        edit()
     }
     return (
         <div className="details">
-            <button onClick={handleEdit} className="edit-button">EDIT</button>
+            <button onClick={handleEdit} className="edit-button"><FontAwesomeIcon icon={faPenToSquare} /></button>
 
             <h3>Internet: <span>${internet.cost.toFixed(2)}</span></h3>
             {internet.notes &&

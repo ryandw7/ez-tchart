@@ -1,7 +1,10 @@
 import React from 'react';
 import { dollarValueCheck } from '../utils';
 import '../styles/App.css';
-import '../styles/print.css'
+import '../styles/print.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare, faCheck } from '@fortawesome/free-solid-svg-icons';
+
 export default function FormComp({ edit, bundle, done }) {
     const { internet, mobile, entertainment } = bundle;
 
@@ -97,7 +100,7 @@ export default function FormComp({ edit, bundle, done }) {
                 <label htmlFor="entertainment-notes">Notes: </label>
                 <textarea onChange={changeInput} name="entertainment-notes" value={entertainment.notes}></textarea>
             </div>
-            <button type="submit" className="submit-button">Submit</button>
+            <button type="submit" className="submit-button"><FontAwesomeIcon icon={faCheck} /></button>
         </form>
     )
 }

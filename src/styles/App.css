@@ -14,34 +14,31 @@ footer {
   margin: 20px auto;
   min-width: 800px;
   max-width: 800px;
-  border: 2px solid red;
 }
 
 header {
-  min-height: 250px;
-  max-height: 250px;
+  min-height: 200px;
+  max-height: 200px;
 }
 
 main {
-  min-height: 600px;
-  max-height: 600px;
+  min-height: 500px;
+  max-height: 500px;
 }
 
 footer {
   border: 3px solid black;
   border-radius: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  flex-wrap: wrap;
   justify-content: space-around;
-  align-content: center;
-  min-height: 250px;
-  max-height: 250px;
+  align-content: space-around;
+  min-height: 300px;
+  max-height: 300px;
   width: 800px;
 }
 
-button {
-  position: absolute;
-}
 
 section {
   min-height: 100%;
@@ -80,27 +77,20 @@ section .bundle-content .details {
 
 
  .form, .details {
- min-height: 550px;
- max-height: 550px;
- height: 550px;
+ min-height: 450px;
+ max-height: 450px;
+ height: 450px;
 }
 #current-package-content .form, #current-package-content .details {
-  min-height: 200px;
- max-height: 200px;
- height: 200px;
+  min-height: 150px;
+ max-height: 150px;
+ height: 150px;
 }
 
 h3 {
   text-align: center;
   margin: 0 auto;
 }
-
-.form .submit-button,
-.details .edit-button {
-  position: absolute;
-  left: 90%;
-}
-
 
 .bundle1-single .form, .bundle1-single .details {
   flex-direction: column;
@@ -120,9 +110,69 @@ h3 {
 }
 
 
-.package-2-button {
-  position: absolute;
-  bottom: 50%;
+
+.price-compare-container {
+  margin: 0 auto;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
 }
 
+.additional-info-form, .additional-info-details {
+width: 100%;
+display: flex;
+flex-direction: column;
+flex-wrap: nowrap;
+justify-content: space-around;
+align-content: space-around;
+height: 100px;
+}
+
+.rep-info-form, .rep-info-details {
+display: flex;
+width: 100%;
+justify-content: space-around;
+}
+.qrs {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+}
+
+
+button {
+  position: absolute;
+}
+
+.current-package button {
+  left: calc(50% - 440px);
+  top: 40px;
+}
+
+.bundle-double-left button , .bundle1-single button {
+left: calc(50% - 440px);
+top: 260px;
+}
+
+.bundle-double-right button {
+  right: calc(50% - 440px);
+  top: 260px;
+  }
+
+.package-2-button {
+  top: 700px;
+  right: calc(50% - 440px);
+}
+
+.additional-info button {
+  top: 775px;
+  left: calc(50% - 440px);
+}
+
+#print-button {
+  top: 900px;
+  right: calc(50% - 470px);
+}
 
