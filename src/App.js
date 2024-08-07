@@ -168,7 +168,7 @@ function App() {
       <header>
 
         <section className="current-package">
-          <h2>Test</h2>
+          <h2>Current Package</h2>
           <div id="current-package-content" className="bundle-content">
             {packages.currentPackage.isEdit ? <FormComp edit={editCurrentPackage} bundle={packages.currentPackage} done={() => doneEditing('currentPackage')} /> : <DetailsComp edit={() => { startEditing('currentPackage') }} bundle={packages.currentPackage} total={prevTotal} />}
           </div>
