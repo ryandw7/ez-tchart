@@ -27,15 +27,14 @@ main {
 }
 
 footer {
-  border: 3px solid black;
-  border-radius: 20px;
+
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: space-around;
   align-content: space-around;
-  min-height: 300px;
-  max-height: 300px;
+  min-height: 350px;
+  max-height: 350px;
   width: 800px;
 }
 
@@ -46,20 +45,38 @@ section {
   height: 100%;
   
 }
+
+.form-section {
+  margin: 20px auto;
+}
+
+.details-section {
+  margin: 20px auto;
+}
 section h2 {
+  box-sizing: border-box;
   margin: 0 auto;
   padding-top: 5px;
   padding-bottom: 5px;
-  width: 100%;
+  width: 800px;
   height: 50px;
   color: white;
   background-color: blueviolet;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  border-right: 2px solid black;
-  border-left: 2px solid black;
 }
 
+
+.bundle-double-left h2, .bundle-double-right h2 {
+  width: 375px;
+}
+.current-package .section-total {
+  position: absolute;
+  width: fit-content;
+  margin: 20px auto;
+  left: calc(50% + 260px);
+  top: 170px;
+}
 section .bundle-content {
   height: 100%;
   min-height: 100%;
@@ -75,19 +92,22 @@ section .bundle-content .details {
   border-bottom: 2px solid black;
 }
 
-
  .form, .details {
  min-height: 450px;
  max-height: 450px;
  height: 450px;
 }
+
 #current-package-content .form, #current-package-content .details {
+  padding: 10px auto;
   min-height: 150px;
  max-height: 150px;
  height: 150px;
 }
 
 h3 {
+  width: 100%;
+  box-sizing: border-box;
   text-align: center;
   margin: 0 auto;
 }
@@ -171,8 +191,63 @@ top: 260px;
   left: calc(50% - 440px);
 }
 
+.additional-info {
+margin: 10px auto;
+width: 100%;
+}
+
+.rep-info-details {
+  height: fit-content
+}
+.additional-info h3 {
+  margin: 5px;
+}
+
+.additional-info span {
+  font-weight: 400;
+  font-size: 20px;
+}
+
+.additional-notes-details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-content: center;
+  text-align: left;
+  text-indent: 20px;
+}
+
+.additional-notes-details p, .additional-notes-details h3 {
+  text-wrap: wrap;
+display: inline-block;
+}
+
+.additional-notes-details h3 {
+  margin: 0 auto;
+  text-align: center;
+  width: 20%;
+  height: 50px
+}
+.additional-notes-details p {
+  top: 50%;
+  margin: 0 auto;
+  height: 50px;
+  width: 70%;
+}
+
 #print-button {
   top: 900px;
   right: calc(50% - 470px);
+}
+.qrs {
+  margin: 10px auto;
+  
+}
+.qr p {
+  text-indent: 0%;
+  margin: 0 auto;
+  width: 100px;
+  text-align: center;
+  text-wrap: wrap;
 }
 

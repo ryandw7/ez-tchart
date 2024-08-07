@@ -31,8 +31,8 @@ export default function Additional({ start, stop, edit, data }) {
                 :
                 <div className="additional-info-details">
                     <div className="rep-info-details">
-                        <h3>Representative: {repName}</h3>
-                        {repContact && <h3>Contact: {repContact}</h3>}
+                        <h3>Representative: <span>{repName}</span></h3>
+                        {repContact && <h3>Contact: <span>{repContact}</span></h3>}
                     </div>
                    {additionalNotes && <div className="additional-notes-details">
                         <h3>Additional Notes:</h3>

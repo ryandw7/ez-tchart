@@ -1,4 +1,7 @@
 @media print {
+    * {
+        box-sizing: border-box
+    }
     button {
         display: none;
     }
@@ -7,5 +10,7 @@
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
-    
+      section h2 {
+        box-sizing: border-box;
+      }
 }
