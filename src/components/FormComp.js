@@ -32,12 +32,13 @@ export default function FormComp({ edit, bundle, done, name }) {
 
             let obj = { cost: mobile.cost, notes: mobile.notes };
 
-            if (name === "mobile-cost" && dollarValueCheck(value)) {
-                obj = {
-                    ...obj,
-                    cost: dollarValueCheck(value)
+            if (name === "mobile-cost") {
+                if (dollarValueCheck(value) !== false) {
+                    obj = {
+                        ...obj,
+                        cost: dollarValueCheck(value)
+                    }
                 }
-
             };
             if (name === "mobile-notes") {
                 obj = {
@@ -51,12 +52,13 @@ export default function FormComp({ edit, bundle, done, name }) {
             console.log(name, value)
             let obj = { cost: entertainment.cost, notes: entertainment.notes };
 
-            if (name === "entertainment-cost" && dollarValueCheck(value)) {
-                obj = {
-                    ...obj,
-                    cost: dollarValueCheck(value)
+            if (name === "entertainment-cost") {
+                if (dollarValueCheck(value) !== false) {
+                    obj = {
+                        ...obj,
+                        cost: dollarValueCheck(value)
+                    }
                 }
-
             } else if (name === "entertainment-notes") {
                 obj = {
                     ...obj,
@@ -73,9 +75,11 @@ export default function FormComp({ edit, bundle, done, name }) {
         e.preventDefault();
         console.log('submit')
         done()
-    }
+    };
+    
     return (
         <form className="form" onSubmit={handleSubmit}>
+
             <section className="form-section">
                 <h3>Internet</h3>
                 <label htmlFor="internet-cost">Cost: </label>
@@ -85,6 +89,7 @@ export default function FormComp({ edit, bundle, done, name }) {
                 <textarea onChange={changeInput} name="internet-notes" value={internet.notes}></textarea>
             </section>
             <section className="form-section">
+
                 <h3>Mobile</h3>
                 <label htmlFor="mobile-cost">Cost: </label>
                 <input name="mobile-cost" type="number" value={mobile.cost ? mobile.cost : ''} onChange={changeInput}></input>
