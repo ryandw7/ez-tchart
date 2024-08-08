@@ -240,11 +240,11 @@ footer article {
 }
 
 .bundle1-button {
-  left: calc(50% - 425px);
+  left: calc(50% - 440px);
   top: 260px;
 }
 .bundle2-button {
-  left: calc(50% + 400px);
+  right: calc(50% - 440px);
   top: 260px;
 }
 
