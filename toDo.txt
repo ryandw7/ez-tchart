@@ -1,0 +1,5 @@
+Align total cost for all situations
+Fix text areas to reflect max size
+add transition between additional info and the rest of footer
+get rid of unnecessary css
+ensure all html is as semantic as necessary

@@ -150,7 +150,7 @@ function App() {
         }
       }
     });
-    
+
     setTimeout(() => {
       window.print()
     }, 500)
@@ -166,49 +166,42 @@ function App() {
     <div className="App">
 
       <header>
-
-        <section className="current-package">
-          <h2>Current Package</h2>
-          <div id="current-package-content" className="bundle-content">
-            {packages.currentPackage.isEdit ? <FormComp edit={editCurrentPackage} bundle={packages.currentPackage} done={() => doneEditing('currentPackage')} /> : <DetailsComp edit={() => { startEditing('currentPackage') }} bundle={packages.currentPackage} total={prevTotal} />}
-          </div>
-        </section>
-
+        <h2>Current Package</h2>
+        {packages.currentPackage.isEdit ? <FormComp edit={editCurrentPackage} bundle={packages.currentPackage} done={() => doneEditing('currentPackage')} name={'current-package'}/> : <DetailsComp edit={() => { startEditing('currentPackage') }} bundle={packages.currentPackage} total={prevTotal} name={'current-package'}/>}
       </header>
-      <main className='new-packages'>
-
-        <section className={packages.bundle2.isAdded ? 'bundle-double-left' : 'bundle1-single'} >
-
+      <main>
+        <section className={packages.bundle2.isAdded ? 'bundle-double' : 'bundle1-single'} >
           <h2>{packages.bundle2.isAdded ? 'Package 1' : 'New Package'}</h2>
-          <div className="bundle-content">
-            {packages.bundle1.isEdit ? <FormComp edit={editBundle1} bundle={packages.bundle1} done={() => doneEditing('bundle1')} /> : <DetailsComp bundle={packages.bundle1} total={newTotal1} edit={() => { startEditing('bundle1') }} />}
-          </div>
+
+          {packages.bundle1.isEdit ? <FormComp edit={editBundle1} bundle={packages.bundle1} done={() => doneEditing('bundle1')} name={'bundle1'}/> : <DetailsComp bundle={packages.bundle1} total={newTotal1} edit={() => { startEditing('bundle1') }} name={'bundle1'}/>}
 
         </section>
-
         {packages.bundle2.isAdded ?
           <button onClick={removeSecondPackage} className="package-2-button">-</button>
           :
           <button onClick={addSecondPackage} className="package-2-button">+</button>}
-
         {packages.bundle2.isAdded &&
-          <section className="bundle-double-right">
+          <section className="bundle-double">
             <h2>Package 2</h2>
-            <div className="bundle-content">
-              {packages.bundle2.isEdit ? <FormComp edit={editBundle2} bundle={packages.bundle2} done={() => doneEditing('bundle2')} /> : <DetailsComp bundle={packages.bundle2} total={newTotal2} edit={() => { startEditing('bundle2') }} />}
-            </div>
+
+            {packages.bundle2.isEdit ? <FormComp edit={editBundle2} bundle={packages.bundle2} done={() => doneEditing('bundle2')} name={'bundle2'}/> : <DetailsComp bundle={packages.bundle2} total={newTotal2} edit={() => { startEditing('bundle2') }} name={'bundle2'}/>}
+
           </section>
+
         }
-
-      </main>
-      <footer classname={packages.bundle2.isAdded ? 'price-compare-double' : 'price-compare-single'}>
-        <div className="price-compare-container">
+        <section className={packages.bundle2.isAdded ? 'price-compare-double' : 'price-compare-single'}>
           <PriceCompare prevTotal={prevTotal} newTotal={newTotal1} />
-
           {packages.bundle2.isAdded && <PriceCompare prevTotal={prevTotal} newTotal={newTotal2} />}
-        </div>
-        <Additional start={startEditAdditional} stop={stopEditAdditional} isEdit={packages.additional.isEdit} edit={editAdditionalInfo} data={packages.additional} />
-        <Qrs />
+        </section>
+      </main>
+      <footer >
+
+        <section className="additional-info">
+          <Additional start={startEditAdditional} stop={stopEditAdditional} isEdit={packages.additional.isEdit} edit={editAdditionalInfo} data={packages.additional} />
+        </section>
+        <section>
+          <Qrs />
+        </section>
         <button id="print-button" onClick={print}>PRINT</button>
       </footer>
     </div>

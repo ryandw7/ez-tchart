@@ -2,8 +2,8 @@
 import '../styles/App.css';
 import '../styles/print.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPenToSquare} from '@fortawesome/free-solid-svg-icons';
-export default function DetailsComp({ bundle, edit, total }) {
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
+export default function DetailsComp({ bundle, edit, total, name }) {
 
     const { internet, mobile, entertainment } = bundle;
 
@@ -12,32 +12,32 @@ export default function DetailsComp({ bundle, edit, total }) {
         edit()
     }
     return (
-        <div className="details">
-            <button onClick={handleEdit} className="edit-button"><FontAwesomeIcon icon={faPenToSquare} /></button>
-            <div className="details-section">
+        <article className="details">
+            <button className={`${name}-button`} onClick={handleEdit} ><FontAwesomeIcon icon={faPenToSquare} /></button>
+            <section className="details-section">
                 <h3>Internet: <span>${internet.cost.toFixed(2)}</span></h3>
                 {internet.notes &&
-                    <div>
+                    <div className="notes">
                         <p>{internet.notes}</p>
                     </div>}
-            </div>
+            </section>
             {entertainment.cost > 0 &&
-                <div className="details-section">
+                <section className="details-section">
                     <h3>Entertainment: <span>${entertainment.cost.toFixed(2)}</span></h3>
                     {entertainment.notes &&
-                        <div>
+                        <div className="notes">
                             <p>{entertainment.notes}</p>
                         </div>}
-                </div>
+                </section>
             }
-            <div className="details-section">
+            <section className="details-section">
                 <h3>mobile: <span>${mobile.cost.toFixed(2)}</span></h3>
                 {mobile.notes &&
-                    <div>
+                    <div className="notes">
                         <p>{mobile.notes}</p>
                     </div>}
-            </div>
-            <h3 className="section-total">Total: ${total.toFixed(2)}</h3>
-        </div>
+            </section>
+            <h3 className={`${name}-total`}>Total: <span>${total.toFixed(2)}</span></h3>
+        </article>
     )
 }
