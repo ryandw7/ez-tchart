@@ -10,7 +10,7 @@ import bookAppointment from '../data/qrs/book-appointment.png';
 
 export default function Qrs() {
     return (
-        <div className="qrs">
+        <section className="qrs">
             <div className="qr">
             <img alt="qr" src={broadbandLabels} width="75" height="75"></img>
             <p>FCC Broadband Labels</p>
@@ -27,7 +27,6 @@ export default function Qrs() {
             <img alt="qr" src={xfinityApp} width="75" height="75"></img>
             <p>Xfinity App</p>
             </div>
-            
             <div className="qr">
             <img alt="qr" src={channels} width="75" height="75"></img>
             <p>Xfinity Channels</p>
@@ -36,6 +35,6 @@ export default function Qrs() {
             <img alt="qr" src={bookAppointment} width="75" height="75"></img>
             <p>Book an Appointment</p>
             </div>
-        </div>
+        </section>
     )
 }

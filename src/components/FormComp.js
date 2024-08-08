@@ -5,7 +5,7 @@ import '../styles/print.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPenToSquare, faCheck } from '@fortawesome/free-solid-svg-icons';
 
-export default function FormComp({ edit, bundle, done }) {
+export default function FormComp({ edit, bundle, done, name }) {
     const { internet, mobile, entertainment } = bundle;
 
     const changeInput = (e) => {
@@ -79,31 +79,33 @@ export default function FormComp({ edit, bundle, done }) {
     
     return (
         <form className="form" onSubmit={handleSubmit}>
-            <div className="form-section">
+
+            <section className="form-section">
                 <h3>Internet</h3>
                 <label htmlFor="internet-cost">Cost: </label>
                 <input name="internet-cost" type="number" value={internet.cost ? internet.cost : ''} onChange={changeInput}></input>
                 <br></br>
                 <label htmlFor="internet-notes">Notes: </label>
                 <textarea onChange={changeInput} name="internet-notes" value={internet.notes}></textarea>
-            </div>
-            <div className="form-section">
+            </section>
+            <section className="form-section">
+
                 <h3>Mobile</h3>
                 <label htmlFor="mobile-cost">Cost: </label>
                 <input name="mobile-cost" type="number" value={mobile.cost ? mobile.cost : ''} onChange={changeInput}></input>
                 <br></br>
                 <label htmlFor="mobile-notes">Notes: </label>
                 <textarea onChange={changeInput} name="mobile-notes" value={mobile.notes}></textarea>
-            </div>
-            <div className="form-section">
+            </section>
+            <section className="form-section">
                 <h3>Entertainment</h3>
                 <label htmlFor="entertainment-cost">Cost: </label>
                 <input name="entertainment-cost" type="number" value={entertainment.cost ? entertainment.cost : ''} onChange={changeInput}></input>
                 <br></br>
                 <label htmlFor="entertainment-notes">Notes: </label>
                 <textarea onChange={changeInput} name="entertainment-notes" value={entertainment.notes}></textarea>
-            </div>
-            <button type="submit" className="submit-button"><FontAwesomeIcon icon={faCheck} /></button>
+            </section>
+            <button type="submit" className={`${name}-button`}><FontAwesomeIcon icon={faCheck} /></button>
         </form>
     )
 }
