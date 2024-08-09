@@ -216,7 +216,7 @@ footer article {
   width: fit-content;
   margin: 20px auto;
   left: calc(50% + 270px);
-  top: 730px;
+  top: 620px;
 }
 
 .bundle-double .bundle1-total {
@@ -224,7 +224,7 @@ footer article {
   width: fit-content;
   margin: 20px auto;
   left: calc(50% - 145px);
-  top: 730px;
+  top: 620px;
 }
 
 
@@ -233,7 +233,7 @@ footer article {
   width: fit-content;
   margin: 20px auto;
   left: calc(50% + 255px);
-  top: 730px;
+  top: 620px;
 }
 
 
@@ -258,7 +258,7 @@ footer article {
 }
 
 .package-2-button {
-  top: 760px;
+  top: 660px;
   right: calc(50% - 430px);
 }
 
