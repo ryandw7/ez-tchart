@@ -194,16 +194,12 @@ function App() {
         </section>
       </main>
       <footer >
-
         <section className="additional-info">
           <Additional start={startEditAdditional} stop={stopEditAdditional} isEdit={packages.additional.isEdit} edit={editAdditionalInfo} data={packages.additional} />
         </section>
-        <section>
-          <Qrs />
-        </section>
         <button id="print-button" onClick={print}>PRINT</button>
-        <span id="disclaimer">THIS IS NOT A LEGAL DOCUMENT! Pricing is estimated. For current pricing, visit https://www.xfinity.com/broadband-labels</span>
       </footer>
+      <span id="disclaimer">THIS IS NOT A LEGAL DOCUMENT! Pricing is estimated.</span>
     </div>
   );
 }
