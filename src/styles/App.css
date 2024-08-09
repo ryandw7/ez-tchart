@@ -164,6 +164,7 @@ footer article {
 }
 
 .additional-notes {
+  margin-top: 5px;
   height: 75px;
   border: 2px solid black;
   width: 100%;
