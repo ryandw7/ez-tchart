@@ -5,13 +5,19 @@
   margin: 0 auto;
 }
 #disclaimer {
+  
   color: black;
+  justify-self: flex-end;
 }
 .App {
+  display: flex;
+  flex-direction: column;
   margin: 20px auto;
   text-align: center;
   max-width: 800px;
   min-width: 800px;
+  height: 1150px;
+  justify-content: space-around;
 }
 
 header,
@@ -76,9 +82,9 @@ header .notes {
 /* MAIN */
 
 main {
-  height: 500px;
-  min-height: 500px;
-  max-height: 500px;
+  height: 600px;
+  min-height: 600px;
+  max-height: 600px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -126,8 +132,8 @@ footer {
   flex-wrap: nowrap;
   justify-content: space-around;
   align-content: space-around;
-  min-height: 300px;
-  max-height: 300px;
+  min-height: 200px;
+  max-height: 200px;
   height: 300px;
   width: 800px;
 }
@@ -135,7 +141,7 @@ footer {
 footer section {
   margin: 0;
   padding: 5px;
-  height: 150px;
+  height: 200px;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -203,14 +209,14 @@ footer article {
   width: fit-content;
   margin: 20px auto;
   left: calc(50% + 270px);
-  top: 170px;
+  top: 190px;
 }
 .bundle1-single .bundle1-total {
   position: absolute;
   width: fit-content;
   margin: 20px auto;
   left: calc(50% + 270px);
-  top: 585px;
+  top: 730px;
 }
 
 .bundle-double .bundle1-total {
@@ -218,7 +224,7 @@ footer article {
   width: fit-content;
   margin: 20px auto;
   left: calc(50% - 145px);
-  top: 585px;
+  top: 730px;
 }
 
 
@@ -227,7 +233,7 @@ footer article {
   width: fit-content;
   margin: 20px auto;
   left: calc(50% + 255px);
-  top: 585px;
+  top: 730px;
 }
 
 
@@ -238,28 +244,28 @@ footer article {
 }
 
 .current-package-button {
-  left: calc(50% - 440px);
-  top: 40px;
+  left: calc(50% - 430px);
+  top: 55px;
 }
 
 .bundle1-button {
-  left: calc(50% - 440px);
-  top: 260px;
+  left: calc(50% - 430px);
+  top: 295px;
 }
 .bundle2-button {
-  right: calc(50% - 440px);
-  top: 260px;
+  right: calc(50% - 430px);
+  top: 295px;
 }
 
 .package-2-button {
-  top: 600px;
-  right: calc(50% - 440px);
+  top: 760px;
+  right: calc(50% - 430px);
 }
 
 
 
 .additional-info button {
-  top: 775px;
+  top: 925px;
   left: calc(50% - 440px);
 }
 
