@@ -164,7 +164,6 @@ function App() {
   return (
 
     <div className="App">
-
       <header>
         <h2>Current Package</h2>
         {packages.currentPackage.isEdit ? <FormComp edit={editCurrentPackage} bundle={packages.currentPackage} done={() => doneEditing('currentPackage')} name={'current-package'}/> : <DetailsComp edit={() => { startEditing('currentPackage') }} bundle={packages.currentPackage} total={prevTotal} name={'current-package'}/>}
@@ -203,6 +202,7 @@ function App() {
           <Qrs />
         </section>
         <button id="print-button" onClick={print}>PRINT</button>
+        <span id="disclaimer">THIS IS NOT A LEGAL DOCUMENT! Pricing is estimated. For current pricing, visit https://www.xfinity.com/broadband-labels</span>
       </footer>
     </div>
   );

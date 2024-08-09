@@ -4,7 +4,9 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
-
+#disclaimer {
+  color: black;
+}
 .App {
   margin: 20px auto;
   text-align: center;
