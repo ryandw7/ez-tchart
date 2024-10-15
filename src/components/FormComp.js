@@ -7,7 +7,6 @@ import { faPenToSquare, faCheck } from '@fortawesome/free-solid-svg-icons';
 
 export default function FormComp({ edit, bundle, done, name }) {
     const { internet, mobile, entertainment } = bundle;
-
     const changeInput = (e) => {
         let { name, value } = e.target;
         e.preventDefault();

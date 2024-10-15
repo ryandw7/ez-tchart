@@ -1,35 +1,61 @@
-import React, { useState, createContext, useContext } from 'react';
+import React from 'react';
 import MobileLine from './MobileLine';
 import useLines, { linesObj } from '../context/MobileContext';
 
 export default function Mobile() {
 
-    
-    const {lines, setLines} = useLines();
+
+    const { lines, setLines } = useLines();
 
     const addLine = (e) => {
-        console.log('adding line')
         e.preventDefault();
-        setLines((prev)=>{
+        setLines((prev) => {
             return [...prev, linesObj]
         })
     }
 
-    console.log(lines)
+    const toggleEdit = (e, i) => {
+        const { isEdit } = lines[i]
+        e.preventDefault();
+        if (isEdit === true) {
+            setLines(prev => {
+                const newArr = prev.toSpliced(i, 1, {
+                    ...lines[i],
+                    isEdit: false
+                })
+                return newArr;
+            })
+        } else if (isEdit === false) {
+            setLines(prev => {
+                const newArr = prev.toSpliced(i, 1, {
+                    ...lines[i],
+                    isEdit: true
+                })
+                return newArr
+            })
+        }
+    }
+
+    const updateLine = (i, key, value) => {
+        setLines((prev) => {
+            return prev.toSpliced(i, 1, {
+                ...lines[i],
+                [key]: value
+            })
+        })
+    }
+
     return (
-     
+
         <div id="mobile">
-            {
-                lines.map((item, index) => <MobileLine lineData={item} i={index} />)
-            }
+            <ul>
+                {
+                    lines.map((item, index) => <MobileLine key={index} lineData={item} i={index} toggleEdit={(event) => toggleEdit(event, index)} updateLine={updateLine} />)
+                }
+            </ul>
             <button onClick={addLine}>+</button>
         </div>
-       
+
     )
 }
 
-current_finance = 0
-eligble_finance = 2500
-
-preorder_16_max:
-  check_finance = new_amount + current_finance < eligble_finance

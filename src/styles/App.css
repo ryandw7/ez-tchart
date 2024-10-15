@@ -273,3 +273,16 @@ footer article {
   top: 900px;
   right: calc(50% - 470px);
 }
+
+#mobile {
+  border: 2px solid black;
+  width: 800px;
+  height: 1000px;
+}
+
+.mobile-line {
+  margin: 20px;
+  width: 700px;
+  border: 2px solid red;
+  text-align: left ;
+}

@@ -1,53 +1,27 @@
-import React, { createContext, useContext, useState } from 'react';
+import React from 'react';
 
 import MobileLineDetailsComp from '../components/MobileLineDetailsComp';
 import MobileLineForm from '../components/MobileLineForm';
 import useLines from '../context/MobileContext';
-export default function MobileLine({ lineData, i }) {
-    const { lines, setLines } = useLines();
+export default function MobileLine({ i, toggleEdit, updateLine }) {
+    const { lines } = useLines();
     const { isEdit } = lines[i]
-    const handleEdit = (e) => {
-        e.preventDefault();
-        if (isEdit === true) {
-            console.log('is edit: true')
-            setLines(prev => {
-                const newArr = prev.toSpliced(i, 1, {
-                    ...lineData,
-                    isEdit: false
-                })
-                return newArr;
-            })
-        }else if(isEdit === false){
-            console.log('is edit: false')
-            console.log(i)
-            setLines(prev => {
-                const newArr = prev.toSpliced(i, 1, {
-                    ...lineData,
-                    isEdit: true
-                })
-                console.log(newArr)
-                return newArr
-            })
-               
-            }
-        }
-
-    
-
+    const lineData = lines[i]
+    console.log(lineData)
     return (
-        <li>
+        <li className="mobile-line">
             {isEdit ?
                 <>
 
-                    <MobileLineForm lineData={lineData} i={i} />
+                    <MobileLineForm line={lineData} i={i} updateLine={updateLine} />
 
                 </>
                 :
                 <>
-                    <MobileLineDetailsComp lineData={lineData} />
-                    <button onClick={handleEdit}>EDIT</button>
+                    <MobileLineDetailsComp line={lineData} />
                 </>
             }
+            <button onClick={toggleEdit}>EDIT</button>
         </li>
     )
 }
