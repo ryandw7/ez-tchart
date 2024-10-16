@@ -4,11 +4,13 @@
   box-sizing: border-box;
   margin: 0 auto;
 }
+
 #disclaimer {
-  
+
   color: black;
   justify-self: flex-end;
 }
+
 .App {
   display: flex;
   flex-direction: column;
@@ -58,8 +60,8 @@ textarea {
 }
 
 span {
-  color:blueviolet
-  }
+  color: blueviolet
+}
 
 /* HEADER */
 
@@ -97,7 +99,7 @@ main section {
 
 main form,
 main article {
-  
+
   flex-direction: column;
   justify-content: space-around;
 }
@@ -108,11 +110,13 @@ main article {
 
 
 /* TWO PACKAGE SPECIFIC STYLES */
-.bundle-double, .bundle-double h2 {
+.bundle-double,
+.bundle-double h2 {
   width: 375px;
 }
 
-.price-compare-double, .price-compare-single {
+.price-compare-double,
+.price-compare-single {
   width: 100%;
   height: 50px;
   min-height: 50px;
@@ -179,7 +183,7 @@ footer article {
 }
 
 .additional-notes h3 {
-  color:blueviolet;
+  color: blueviolet;
   font-size: 12px;
   font-weight: bolder;
 }
@@ -211,6 +215,7 @@ footer article {
   left: calc(50% + 270px);
   top: 190px;
 }
+
 .bundle1-single .bundle1-total {
   position: absolute;
   width: fit-content;
@@ -239,7 +244,7 @@ footer article {
 
 
 /* EDIT BUTTONS */
- button {
+button {
   position: absolute;
 }
 
@@ -252,6 +257,7 @@ footer article {
   left: calc(50% - 430px);
   top: 295px;
 }
+
 .bundle2-button {
   right: calc(50% - 430px);
   top: 295px;
@@ -280,9 +286,31 @@ footer article {
   height: 1000px;
 }
 
-.mobile-line {
-  margin: 20px;
-  width: 700px;
-  border: 2px solid red;
-  text-align: left ;
+
+#mobile button {
+  position: relative;
+}
+
+#mobile .add-line-button {
+
+  top: 30px;
+  float: right;
+  height: 30px;
+  width: 30px;
+  position: relative;
+}
+
+ul {
+  padding: 0;
+  margin: 0 auto;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+.edit-button {
+  grid-row: 1 / span 1;
+  grid-column: 8 / span 1;
 }

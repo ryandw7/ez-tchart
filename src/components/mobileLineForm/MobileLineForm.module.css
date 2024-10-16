@@ -1,0 +1,66 @@
+.mobileLineForm {
+    padding: 5px;
+    margin: 5 auto;
+    justify-self: flex-start;
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(autofill, 50px);
+    margin: 20px;
+    width: 700px;
+    text-align: left;
+    box-shadow: 10px 10px lightblue;
+    border: 2px solid black;
+  }
+
+
+.formDiv {
+    height: 75px;
+    padding: 3px 10px;
+    border: 1px solid blue;
+    display: flexbox;
+    flex-direction: column;
+    flex-wrap: wrap;
+    grid-column: 1 / span 4;
+    width: 40%;
+    text-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+  }
+
+  #form1 {
+
+    display: block;
+    grid-row: 1 / span 2;
+  
+  }
+  
+  #form2 {
+    display: block;
+    grid-row: 3 / span 2;
+  }
+  
+  #form3 {
+    display: block;
+    grid-row: 5 / span 2;
+  }
+  
+  #form4 {
+    display: block;
+    grid-row: 7 / span 2;
+  }
+  
+  #form5 {
+    grid-row: 9 / span 2;
+  }
+  
+  #form6 {
+    grid-row: 11 / span 2;
+  }
+  
+  input {
+  width: 100%;
+  display: block;
+  }
+
+  label {
+  }

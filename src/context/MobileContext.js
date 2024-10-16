@@ -10,6 +10,7 @@ export const linesObj = {
   newDeviceCost: 0,
   inFull: false,
   lineDiscount: 0,
+  lineDiscountDuration: 0,
   deviceDiscount: 0,
   note: ''
 }
