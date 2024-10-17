@@ -1,5 +1,5 @@
 import React from 'react';
-
+import styles from './MobileLineDetails.module.css'
 export default function MobileLineDetailsComp({ line }) {
     const { name,
         phoneNumber,
@@ -13,17 +13,17 @@ export default function MobileLineDetailsComp({ line }) {
         note } = line;
 
     return (
-        <>
-            <h3>Name: {name}</h3>
-            <h4>Number: {phoneNumber}</h4>
-            <p>{lineType}</p>
-            <p>{isBYOD}</p>
+        <div className={styles.mobileLineDetails}>
+            <h3 className={styles.lineName}>{name ? name : 'Name: _________'}</h3>
+            <h4 className={styles.lineNum}>Number: {phoneNumber}</h4>
+            <p className={styles.lineType}>{lineType}</p>
+            <p>{isBYOD ? 'BYOD' : 'New Device'}</p>
             <p>{newDevice}</p>
             <p>{newDeviceCost}</p>
             <p>{inFull}</p>
             <p>{lineDiscount}</p>
             <p>{deviceDiscount}</p>
             <p>{note}</p>
-        </>
+        </div>
     )
 }

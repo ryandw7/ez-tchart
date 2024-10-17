@@ -3,18 +3,20 @@
 * {
   box-sizing: border-box;
   margin: 0 auto;
+  background-color: #323236;
 }
 
 #disclaimer {
 
-  color: black;
+  color: white;
   justify-self: flex-end;
 }
 
 .App {
   display: flex;
   flex-direction: column;
-  margin: 20px auto;
+  margin: 0px auto;
+  padding: 20px;
   text-align: center;
   max-width: 800px;
   min-width: 800px;
@@ -280,37 +282,16 @@ button {
   right: calc(50% - 470px);
 }
 
-#mobile {
-  border: 2px solid black;
-  width: 800px;
-  height: 1000px;
-}
 
 
-#mobile button {
-  position: relative;
-}
-
-#mobile .add-line-button {
-
-  top: 30px;
-  float: right;
-  height: 30px;
-  width: 30px;
-  position: relative;
-}
-
-ul {
-  padding: 0;
-  margin: 0 auto;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-}
-
-.edit-button {
-  grid-row: 1 / span 1;
-  grid-column: 8 / span 1;
+#logo {
+  z-index: 1;
+  text-align: left;
+  box-shadow: 17px 20px 40px #232326;
+  opacity: 75%;
+  top: 0px;
+  width: 100%;
+  left: 10px;
+  font-size: 30px;
+  position: fixed;
 }

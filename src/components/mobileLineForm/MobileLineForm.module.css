@@ -8,8 +8,8 @@
     margin: 20px;
     width: 700px;
     text-align: left;
-    box-shadow: 10px 10px lightblue;
-    border: 2px solid black;
+    box-shadow: 17px 20px 40px;
+    border-radius: 11px;
   }
 
 
@@ -60,7 +60,18 @@
   input {
   width: 100%;
   display: block;
+  background-color: #cdcdcd;
+  box-shadow: 17px 20px 40px black;
+  border-radius: 11px;
+  border: none;
   }
 
   label {
+
+  }
+
+  @media (prefers-color-scheme: dark) {
+    input {
+      
+    }
   }

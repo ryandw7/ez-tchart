@@ -1,7 +1,8 @@
 import React from 'react';
 import MobileLine from './MobileLine';
-import useLines, { linesObj } from '../context/MobileContext';
-import '../styles/App.css'
+import useLines, { linesObj } from '../../context/MobileContext';
+import '../../styles/App.css'
+import styles from './Mobile.module.css'
 export default function Mobile() {
 
 
@@ -47,13 +48,13 @@ export default function Mobile() {
 
     return (
 
-        <div id="mobile">
-            <ul>
+        <div id={styles.mobile}>
+            <ul className={styles.linesList}>
                 {
                     lines.map((item, index) => <MobileLine key={index} lineData={item} i={index} toggleEdit={(event) => toggleEdit(event, index)} updateLine={updateLine} />)
                 }
             </ul>
-            <button className="add-line-button" onClick={addLine}>+</button>
+            <button className={styles.addLineButton} onClick={addLine}>+</button>
         </div>
 
     )

@@ -7,7 +7,7 @@ import PriceCompare from './components/PriceCompare';
 import Additional from './components/Additional';
 import { MobileProvider } from './context/MobileContext.js';
 import packagesObj from './data/packageObject.js';
-import Mobile from './features/Mobile.js'
+import Mobile from './features/mobile/Mobile.js'
 function App() {
   //State management
   const [mobileDetails, setMobileDetails] = useState(false)
@@ -174,6 +174,7 @@ function App() {
   return (
 
     <div className="App">
+    <span id="logo">EZ T-Chart</span>
       <button onClick={toggleMobileDetails}>MOBILE</button>
       {mobileDetails ? 
       <MobileProvider><Mobile /></MobileProvider>
