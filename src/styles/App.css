@@ -3,15 +3,20 @@
 * {
   box-sizing: border-box;
   margin: 0 auto;
+  
 }
+
 #disclaimer {
+
   color: black;
   justify-self: flex-end;
 }
+
 .App {
   display: flex;
   flex-direction: column;
-  margin: 20px auto;
+  margin: 0px auto;
+  padding: 20px;
   text-align: center;
   max-width: 800px;
   min-width: 800px;
@@ -57,8 +62,8 @@ textarea {
 }
 
 span {
-  color:blueviolet
-  }
+  color: blueviolet
+}
 
 /* HEADER */
 
@@ -96,7 +101,7 @@ main section {
 
 main form,
 main article {
-  
+
   flex-direction: column;
   justify-content: space-around;
 }
@@ -107,11 +112,13 @@ main article {
 
 
 /* TWO PACKAGE SPECIFIC STYLES */
-.bundle-double, .bundle-double h2 {
+.bundle-double,
+.bundle-double h2 {
   width: 375px;
 }
 
-.price-compare-double, .price-compare-single {
+.price-compare-double,
+.price-compare-single {
   width: 100%;
   height: 50px;
   min-height: 50px;
@@ -178,7 +185,7 @@ footer article {
 }
 
 .additional-notes h3 {
-  color:blueviolet;
+  color: blueviolet;
   font-size: 12px;
   font-weight: bolder;
 }
@@ -210,12 +217,13 @@ footer article {
   left: calc(50% + 270px);
   top: 190px;
 }
+
 .bundle1-single .bundle1-total {
   position: absolute;
   width: fit-content;
   margin: 20px auto;
   left: calc(50% + 270px);
-  top: 730px;
+  top: 620px;
 }
 
 .bundle-double .bundle1-total {
@@ -223,7 +231,7 @@ footer article {
   width: fit-content;
   margin: 20px auto;
   left: calc(50% - 145px);
-  top: 730px;
+  top: 620px;
 }
 
 
@@ -232,13 +240,13 @@ footer article {
   width: fit-content;
   margin: 20px auto;
   left: calc(50% + 255px);
-  top: 730px;
+  top: 620px;
 }
 
 
 
 /* EDIT BUTTONS */
- button {
+button {
   position: absolute;
 }
 
@@ -251,13 +259,14 @@ footer article {
   left: calc(50% - 430px);
   top: 295px;
 }
+
 .bundle2-button {
   right: calc(50% - 430px);
   top: 295px;
 }
 
 .package-2-button {
-  top: 760px;
+  top: 660px;
   right: calc(50% - 430px);
 }
 
@@ -271,4 +280,18 @@ footer article {
 #print-button {
   top: 900px;
   right: calc(50% - 470px);
+}
+
+
+
+#logo {
+  z-index: 1;
+  text-align: left;
+  box-shadow: 17px 20px 40px #232326;
+  opacity: 75%;
+  top: 0px;
+  width: 100%;
+  left: 10px;
+  font-size: 30px;
+  position: fixed;
 }

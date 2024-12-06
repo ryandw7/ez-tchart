@@ -5,13 +5,23 @@ import FormComp from './components/FormComp';
 import DetailsComp from './components/DetailsComp'
 import PriceCompare from './components/PriceCompare';
 import Additional from './components/Additional';
-import Qrs from './components/Qrs.js';
+import { MobileProvider } from './context/MobileContext.js';
 import packagesObj from './data/packageObject.js';
-
+import Mobile from './features/mobile/Mobile.js'
 function App() {
   //State management
+  const [mobileDetails, setMobileDetails] = useState(false)
   const [packages, setPackages] = useState(packagesObj);
-
+  const toggleMobileDetails = (e) => {
+    e.preventDefault()
+    console.log('toggling')
+    if (mobileDetails === true) {
+      setMobileDetails(false)
+    } else if (mobileDetails === false) {
+      setMobileDetails(true)
+    }
+  }
+  console.log(mobileDetails)
   //State Modifiers
   //update cost or note values of state
   const setValue = (bundle, service, value) => {
@@ -164,44 +174,54 @@ function App() {
   return (
 
     <div className="App">
-      <header>
-        <h2>Current Package</h2>
-        {packages.currentPackage.isEdit ? <FormComp edit={editCurrentPackage} bundle={packages.currentPackage} done={() => doneEditing('currentPackage')} name={'current-package'}/> : <DetailsComp edit={() => { startEditing('currentPackage') }} bundle={packages.currentPackage} total={prevTotal} name={'current-package'}/>}
-      </header>
-      <main>
-        <section className={packages.bundle2.isAdded ? 'bundle-double' : 'bundle1-single'} >
-          <h2>{packages.bundle2.isAdded ? 'Package 1' : 'New Package'}</h2>
+    <span id="logo">EZ T-Chart</span>
+      <button onClick={toggleMobileDetails}>MOBILE</button>
+      {mobileDetails ? 
+      <MobileProvider><Mobile /></MobileProvider>
+        :
+        <>
+          <header>
+            <h2>Current Package</h2>
+            {packages.currentPackage.isEdit ? <FormComp edit={editCurrentPackage} bundle={packages.currentPackage} done={() => doneEditing('currentPackage')} name={'current-package'} /> : <DetailsComp edit={() => { startEditing('currentPackage') }} bundle={packages.currentPackage} total={prevTotal} name={'current-package'} />}
+          </header>
+          <main>
+            <section className={packages.bundle2.isAdded ? 'bundle-double' : 'bundle1-single'} >
+              <h2>{packages.bundle2.isAdded ? 'Package 1' : 'New Package'}</h2>
 
-          {packages.bundle1.isEdit ? <FormComp edit={editBundle1} bundle={packages.bundle1} done={() => doneEditing('bundle1')} name={'bundle1'}/> : <DetailsComp bundle={packages.bundle1} total={newTotal1} edit={() => { startEditing('bundle1') }} name={'bundle1'}/>}
+              {packages.bundle1.isEdit ? <FormComp edit={editBundle1} bundle={packages.bundle1} done={() => doneEditing('bundle1')} name={'bundle1'} /> : <DetailsComp bundle={packages.bundle1} total={newTotal1} edit={() => { startEditing('bundle1') }} name={'bundle1'} />}
 
-        </section>
-        {packages.bundle2.isAdded ?
-          <button onClick={removeSecondPackage} className="package-2-button">-</button>
-          :
-          <button onClick={addSecondPackage} className="package-2-button">+</button>}
-        {packages.bundle2.isAdded &&
-          <section className="bundle-double">
-            <h2>Package 2</h2>
+            </section>
+            {packages.bundle2.isAdded ?
+              <button onClick={removeSecondPackage} className="package-2-button">-</button>
+              :
+              <button onClick={addSecondPackage} className="package-2-button">+</button>}
+            {packages.bundle2.isAdded &&
+              <section className="bundle-double">
+                <h2>Package 2</h2>
 
-            {packages.bundle2.isEdit ? <FormComp edit={editBundle2} bundle={packages.bundle2} done={() => doneEditing('bundle2')} name={'bundle2'}/> : <DetailsComp bundle={packages.bundle2} total={newTotal2} edit={() => { startEditing('bundle2') }} name={'bundle2'}/>}
+                {packages.bundle2.isEdit ? <FormComp edit={editBundle2} bundle={packages.bundle2} done={() => doneEditing('bundle2')} name={'bundle2'} /> : <DetailsComp bundle={packages.bundle2} total={newTotal2} edit={() => { startEditing('bundle2') }} name={'bundle2'} />}
 
-          </section>
+              </section>
 
-        }
-        <section className={packages.bundle2.isAdded ? 'price-compare-double' : 'price-compare-single'}>
-          <PriceCompare prevTotal={prevTotal} newTotal={newTotal1} />
-          {packages.bundle2.isAdded && <PriceCompare prevTotal={prevTotal} newTotal={newTotal2} />}
-        </section>
-      </main>
-      <footer >
-        <section className="additional-info">
-          <Additional start={startEditAdditional} stop={stopEditAdditional} isEdit={packages.additional.isEdit} edit={editAdditionalInfo} data={packages.additional} />
-        </section>
-        <button id="print-button" onClick={print}>PRINT</button>
-      </footer>
-      <span id="disclaimer">THIS IS NOT A LEGAL DOCUMENT! Pricing is estimated.</span>
+            }
+            <section className={packages.bundle2.isAdded ? 'price-compare-double' : 'price-compare-single'}>
+              <PriceCompare prevTotal={prevTotal} newTotal={newTotal1} />
+              {packages.bundle2.isAdded && <PriceCompare prevTotal={prevTotal} newTotal={newTotal2} />}
+            </section>
+          </main>
+          <footer >
+            <section className="additional-info">
+              <Additional start={startEditAdditional} stop={stopEditAdditional} isEdit={packages.additional.isEdit} edit={editAdditionalInfo} data={packages.additional} />
+            </section>
+            <button id="print-button" onClick={print}>PRINT</button>
+          </footer>
+          <span id="disclaimer">THIS IS NOT A LEGAL DOCUMENT! Pricing is estimated.</span>
+        </>
+      }
     </div>
+
   );
+
 }
 
 export default App;

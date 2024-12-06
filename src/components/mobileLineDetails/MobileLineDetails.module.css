@@ -1,0 +1,27 @@
+.mobileLineDetails {
+    padding: 5px;
+    margin: 5 auto;
+    justify-self: flex-start;
+    display: grid;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(autofill, 50px);
+    margin: 20px;
+    width: 700px;
+    text-align: left;
+    box-shadow: 17px 20px 40px;
+    border-radius: 11px;
+}
+
+.lineName {
+    font-size: 20px;
+    text-wrap: nowrap;
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+}
+
+.lineNum {
+    font-size: 18px;
+    text-wrap: nowrap;
+    grid-column: 1 / span 2;
+    grid-row: 2 / span 2;
+}
